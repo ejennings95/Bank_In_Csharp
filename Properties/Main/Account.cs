@@ -31,12 +31,14 @@ namespace Bank_In_Csharp.Properties.Main
         {
             SetBalance(balance + amount);
             transactions.Add(new Transaction(DateTime.Now.ToString("dd/MM/yy"), amount, "Deposit", GetBalance()));
+            Console.WriteLine("£{0} has been deposited", amount);
         }
 
         public void Withdrawl(double amount)
         {
             SetBalance(balance - amount);
             transactions.Add(new Transaction(DateTime.Now.ToString("dd/MM/yy"), amount, "Withdrawl", GetBalance()));
+            Console.WriteLine("£{0} has been withdrawn", amount);
         }
     }
 }

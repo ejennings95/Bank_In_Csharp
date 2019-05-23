@@ -14,9 +14,7 @@ namespace Bank_In_Csharp
             account.Withdrawl(1500.00);
 
             Statement statement = new Statement(account.GetTransactions());
-
             statement.DisplayStatement();
-
         }
     }
 }
