@@ -7,7 +7,7 @@ namespace Bank_In_Csharp.Properties.Test.Unit_Tests
     {
 
         [Test, Description("Original Balance is 0.00")]
-        public void defaultBalance()
+        public void DefaultBalance()
         {
             Account account = new Account();
             Assert.AreEqual(0.00, account.GetBalance());
@@ -28,6 +28,21 @@ namespace Bank_In_Csharp.Properties.Test.Unit_Tests
             account.Deposit(100.00);
             account.Withdrawl(50.00);
             Assert.AreEqual(50.00, account.GetBalance());
+        }
+
+        [Test, Description("Account starts with no transactions")]
+        public void DefaultTransactions()
+        {
+            Account account = new Account();
+            Assert.AreEqual(0, account.GetTransactions().Count);
+        }
+
+        [Test, Description("Account starts with no transactions")]
+        public void AddTransactions()
+        {
+            Account account = new Account();
+            account.Deposit(100.00);
+            Assert.AreEqual(1, account.GetTransactions().Count);
         }
     }
 }
