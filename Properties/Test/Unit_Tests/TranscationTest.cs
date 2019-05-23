@@ -16,7 +16,7 @@ namespace Bank_In_Csharp.Properties.Test.Unit_Tests
         public void SetTransactionAmount()
         {
             Transaction transaction = new Transaction("23/05/19", 10.00, "Deposit", 20.00);
-            Assert.AreEqual(10.00, transaction.GetTransactionAmount());
+            Assert.AreEqual("10.00", transaction.GetTransactionAmount());
         }
 
         [Test, Description("Creating a new instance of transaction sets transactionType")]
@@ -30,7 +30,7 @@ namespace Bank_In_Csharp.Properties.Test.Unit_Tests
         public void SetCurrentBalance()
         {
             Transaction transaction = new Transaction("23/05/19", 10.00, "Deposit", 20.00);
-            Assert.AreEqual(20.00, transaction.GetCurrentBalance());
+            Assert.AreEqual("20.00", transaction.GetCurrentBalance());
         }
     }
 }

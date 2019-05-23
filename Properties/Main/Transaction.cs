@@ -31,9 +31,9 @@ namespace Bank_In_Csharp.Properties.Main
             transactionAmount = amount;
         }
 
-        public double GetTransactionAmount()
+        public string GetTransactionAmount()
         {
-            return transactionAmount;
+            return String.Format("{0:0.00}", transactionAmount);
         }
 
         public void SetTransactionType(string type)
@@ -51,9 +51,9 @@ namespace Bank_In_Csharp.Properties.Main
             currentBalance = balance;
         }
 
-        public double GetCurrentBalance()
+        public string GetCurrentBalance()
         {
-            return currentBalance;
+            return String.Format("{0:0.00}", currentBalance);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Bank_In_Csharp.Properties.Main
         {
             SetBalance(balance + amount);
             transactions.Add(new Transaction(DateTime.Now.ToString("dd/MM/yy"), amount, "Deposit", GetBalance()));
-            Console.WriteLine("£{0} has been deposited", amount);
+            Console.WriteLine("£{0} has been deposited", String.Format("{0:0.00}", amount));
         }
 
         public void Withdrawl(double amount)
@@ -39,7 +39,7 @@ namespace Bank_In_Csharp.Properties.Main
             if ((balance - amount) < 0) throw new InsufficientFundsException("There are not sufficent funds to complete this transaction");
             SetBalance(balance - amount);
             transactions.Add(new Transaction(DateTime.Now.ToString("dd/MM/yy"), amount, "Withdrawl", GetBalance()));
-            Console.WriteLine("£{0} has been withdrawn", amount);
+            Console.WriteLine("£{0} has been withdrawn", String.Format("{0:0.00}", amount));
         }
     }
 }
