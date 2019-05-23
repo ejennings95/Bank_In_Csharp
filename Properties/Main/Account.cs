@@ -36,6 +36,7 @@ namespace Bank_In_Csharp.Properties.Main
 
         public void Withdrawl(double amount)
         {
+            if ((balance - amount) < 0) throw new InsufficientFundsException("There are not sufficent funds to complete this transaction");
             SetBalance(balance - amount);
             transactions.Add(new Transaction(DateTime.Now.ToString("dd/MM/yy"), amount, "Withdrawl", GetBalance()));
             Console.WriteLine("£{0} has been withdrawn", amount);

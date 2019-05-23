@@ -49,8 +49,18 @@ namespace Bank_In_Csharp.Properties.Test.Unit_Tests
         public void AddTransactionsViaWithdrawl()
         {
             Account account = new Account();
-            account.Withdrawl(100.00);
+            account.Deposit(100.00);
             Assert.AreEqual(1, account.GetTransactions().Count);
+            account.Withdrawl(10.00);
+            Assert.AreEqual(2, account.GetTransactions().Count);
+        }
+
+        [Test, Description("Unable to withdrawl if insufficient funuds")]
+        [ExpectedException(typeof(InsufficientFundsException))]
+        public void InsufficientFundsForWithdrawl()
+        {
+            Account account = new Account();
+            account.Withdrawl(100.00);
         }
     }
 }

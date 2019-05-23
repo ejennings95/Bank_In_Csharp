@@ -53,6 +53,7 @@
     <Compile Include="Properties\Test\Unit_Tests\TranscationTest.cs" />
     <Compile Include="Properties\Main\Statement.cs" />
     <Compile Include="Properties\Main\Program.cs" />
+    <Compile Include="Properties\Main\InsufficientFundsException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
