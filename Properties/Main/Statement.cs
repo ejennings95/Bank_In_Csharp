@@ -27,6 +27,7 @@ namespace Bank_In_Csharp.Properties.Main
         public StringBuilder DisplayStatement()
         {
             statement.Append("date || credit || debit || balance\n");
+            transactions.Reverse();
             foreach (var transaction in transactions)
             {
                 statement.Append(transaction.GetTransactionDate());
