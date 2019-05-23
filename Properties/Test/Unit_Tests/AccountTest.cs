@@ -37,11 +37,19 @@ namespace Bank_In_Csharp.Properties.Test.Unit_Tests
             Assert.AreEqual(0, account.GetTransactions().Count);
         }
 
-        [Test, Description("Account starts with no transactions")]
-        public void AddTransactions()
+        [Test, Description("Account stores transaction when money deposited")]
+        public void AddTransactionsViaDeposit()
         {
             Account account = new Account();
             account.Deposit(100.00);
+            Assert.AreEqual(1, account.GetTransactions().Count);
+        }
+
+        [Test, Description("Account stores transaction when money withdrawn")]
+        public void AddTransactionsViaWithdrawl()
+        {
+            Account account = new Account();
+            account.Withdrawl(100.00);
             Assert.AreEqual(1, account.GetTransactions().Count);
         }
     }

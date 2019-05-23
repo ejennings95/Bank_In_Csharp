@@ -36,6 +36,7 @@ namespace Bank_In_Csharp.Properties.Main
         public void Withdrawl(double amount)
         {
             SetBalance(balance - amount);
+            transactions.Add(new Transaction(DateTime.Now.ToString("dd/MM/yy"), amount, "Withdrawl", GetBalance()));
         }
     }
 }
