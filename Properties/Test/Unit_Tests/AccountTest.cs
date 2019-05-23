@@ -13,12 +13,21 @@ namespace Bank_In_Csharp.Properties.Test.Unit_Tests
             Assert.AreEqual(0.00, account.GetBalance());
         }
 
-    [Test, Description("Deposited money goes into Balance")]
+        [Test, Description("Deposited money goes into Balance")]
         public void Deposit()
         {
             Account account = new Account();
             account.Deposit(100.00);
             Assert.AreEqual(100.00, account.GetBalance());
+        }
+
+        [Test, Description("Withdrawn money is taken away from Balance")]
+        public void Withdrawl()
+        {
+            Account account = new Account();
+            account.Deposit(100.00);
+            account.Withdrawl(50.00);
+            Assert.AreEqual(50.00, account.GetBalance());
         }
     }
 }

@@ -22,6 +22,11 @@ namespace Bank_In_Csharp.Properties.Main
         public void Deposit(double amount)
         {
             SetBalance(balance + amount); 
-        } 
+        }
+
+        public void Withdrawl(double amount)
+        {
+            SetBalance(balance - amount);
+        }
     }
 }
